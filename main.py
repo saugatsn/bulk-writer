@@ -1,14 +1,14 @@
 from PIL import Image, ImageDraw, ImageFont
 import pandas as pd
 import os
-folder_path = 'C:/Users/nepal/OneDrive/Desktop/pythonpro/Names'
+folder_path = 'Names'
 if not os.path.exists(folder_path):
     os.mkdir(folder_path)
 # Read the Excel file containing the names
-df = pd.read_excel("C:/Users/nepal/OneDrive/Desktop/pythonpro/Names.xlsx")
+df = pd.read_excel("Names.xlsx")
 
 # Open the PSD file
-im = Image.open("C:/Users/nepal/OneDrive/Desktop/pythonpro/photoshop-file.psd")
+im = Image.open("photoshop-file.psd")
 
 # Create a draw object
 draw = ImageDraw.Draw(im)
@@ -30,5 +30,5 @@ for index, row in df.iterrows():
     # Save the PSD file with the inserted name as a PNG file
     im.save(f"{folder_path}/{row['Name']}.jpg")
     # re-open the PSD file
-    im = Image.open("C:/Users/nepal/OneDrive/Desktop/pythonpro/try3.psd")
+    im = Image.open("photoshop-file.psd")
     draw = ImageDraw.Draw(im)
